@@ -33,6 +33,7 @@ object TestDao {
         return -1
     }
 
+    
     fun delete(tableName: String?, whereClause: String?, whereArgs: Array<String>?): Int {
         return DBManager.delete(tableName, whereClause, whereArgs)
     }
