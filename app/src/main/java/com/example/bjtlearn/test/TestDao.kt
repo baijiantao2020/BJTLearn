@@ -20,6 +20,7 @@ object TestDao {
         } + ");"
     }
 
+    
     fun insert(data: TestDataStruct?): Long {
         if (data == null) {
             Log.d(TAG, "insert invalid params, data: $data")
