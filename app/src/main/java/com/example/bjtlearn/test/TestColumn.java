@@ -1,7 +1,7 @@
 package com.example.bjtlearn.test;
 
 public enum TestColumn {
-    COLUMN_ID("ID", "TEXT PRIMARY KEY NOT NULL"),
+    COLUMN_ID("ID", "INTEGER PRIMARY KEY NOT NULL"),
     COLUMN_AAA("AAA", "TEXT"),
     COLUMN_BBB("BBB", "TEXT"),
     COLUMN_CCC("CCC", "TEXT"),

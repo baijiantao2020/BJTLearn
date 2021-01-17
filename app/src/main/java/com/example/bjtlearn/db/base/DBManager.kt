@@ -18,6 +18,7 @@ object DBManager {
             Log.d(TAG, "insert invalid params: $tableName")
         }
         try {
+            Log.d(TAG, "db path: ${mDatabase.path}")
             return mDatabase.insert(tableName, nullColumnHack, value)
         } catch (t: Throwable) {
             Log.e(TAG, "db insert throwable: ${t.message}")
