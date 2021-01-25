@@ -3,6 +3,7 @@ package com.example.bjtlearn.db.base
 import android.content.ContentValues
 import android.util.Log
 import com.example.bjtlearn.main.BjtLearnApplication
+import com.tencent.wcdb.Cursor
 import java.lang.RuntimeException
 
 object DBManager {
@@ -38,6 +39,19 @@ object DBManager {
             t.printStackTrace()
         }
         return 0
+    }
+
+    fun rawQuery(sql: String?, selectionArgs: Array<String>?): Cursor? {
+        if (sql.isNullOrEmpty()) {
+            Log.d(TAG, "rawQuery invalid params: $sql")
+        }
+        try {
+            return mDatabase.rawQuery(sql, selectionArgs)
+        } catch (t: Throwable) {
+            Log.e(TAG, "db rawQuery throwable: ${t.message}")
+            t.printStackTrace()
+        }
+        return null
     }
 
     fun beginTransaction() {

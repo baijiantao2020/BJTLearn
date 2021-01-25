@@ -22,5 +22,8 @@ class MainActivity : AppCompatActivity() {
         delete_test.setOnClickListener {
 
         }
+        query_test.setOnClickListener {
+            TestDao.testIndex()
+        }
     }
 }

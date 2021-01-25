@@ -3,6 +3,7 @@ package com.example.bjtlearn.test
 import android.content.ContentValues
 import android.util.Log
 import com.example.bjtlearn.db.base.DBManager
+import com.tencent.wcdb.Cursor
 
 object TestDao {
 
@@ -34,6 +35,15 @@ object TestDao {
         DBManager.endTransaction()
         return rowid
     }
+
+    fun testIndex(){
+        DBManager.beginTransaction()
+        val cursor = DBManager.rawQuery(
+                "explain query plan select * from $TABLE_NAME where ${TestColumn.COLUMN_ID.key} = 0",
+                null)
+        DBManager.endTransaction()
+        buildTestIndexList(cursor)
+    }
     
     fun delete(tableName: String?, whereClause: String?, whereArgs: Array<String>?): Int {
         if (tableName.isNullOrEmpty()) {
@@ -44,6 +54,23 @@ object TestDao {
         rows = DBManager.delete(tableName, whereClause, whereArgs)
         DBManager.endTransaction()
         return rows
+    }
+
+    private fun buildTestIndexList(cursor: Cursor?) {
+        if (cursor == null) {
+            return
+        }
+        val selectIdIndex = cursor.getColumnIndex("selectid")
+        val orderIndex = cursor.getColumnIndex("order")
+        val fromIndex = cursor.getColumnIndex("from")
+        val detailIndex = cursor.getColumnIndex("detail")
+        while (cursor.moveToNext()) {
+            val selectId = cursor.getInt(selectIdIndex)
+            val order = cursor.getInt(orderIndex)
+            val from = cursor.getInt(fromIndex)
+            val detail = cursor.getString(detailIndex)
+            Log.d(TAG, "selectId: $selectId, order: $order, from: $from, detail: $detail")
+        }
     }
 
     private fun buildValues(data: TestDataStruct): ContentValues {
