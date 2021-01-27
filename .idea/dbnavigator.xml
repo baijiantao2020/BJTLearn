@@ -16,17 +16,21 @@
       <scope value="GLOBAL" />
       <destination value="FILE" />
       <format value="EXCEL" />
-      <charset value="UTF-8" />
+      <charset value="GBK" />
     </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="63799ad2-84d3-4ff7-bc09-88dbe509c8b8">
+        <schema name="main" object-types="view, table" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="3a573965-27be-4791-9596-31f9f503f448">
+    <connection id="63799ad2-84d3-4ff7-bc09-88dbe509c8b8">
       <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
@@ -34,10 +38,10 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="3a573965-27be-4791-9596-31f9f503f448" />
+    <connection id="63799ad2-84d3-4ff7-bc09-88dbe509c8b8" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="3a573965-27be-4791-9596-31f9f503f448" dataset="main.TABLE_TEST" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="63799ad2-84d3-4ff7-bc09-88dbe509c8b8" dataset="main.TABLE_TEST" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -65,7 +69,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="3a573965-27be-4791-9596-31f9f503f448" active="true">
+      <connection id="63799ad2-84d3-4ff7-bc09-88dbe509c8b8" active="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -80,7 +84,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="$PROJECT_DIR$/../../../bjt_learn_db" schema="main" />
+            <file path="D:\Git\bjt_learn_db" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />

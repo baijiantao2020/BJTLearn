@@ -2,28 +2,38 @@ package com.example.bjtlearn
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import com.example.bjtlearn.maintab.FeedTabFragment
+import com.example.bjtlearn.maintab.MsgTabFragment
+import com.example.bjtlearn.maintab.NearByTabFragment
+import com.example.bjtlearn.maintab.ProfileTabFragment
 import com.example.bjtlearn.test.TestDao
 import com.example.bjtlearn.test.TestDataStruct
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initListener()
+        main_view_pager.adapter = MainViewPagerAdapter(this.supportFragmentManager)
     }
 
-    private fun initListener() {
-        insert_test.setOnClickListener {
-            TestDataStruct(1).apply {
-                TestDao.insert(TestDataStruct((Math.random() * 1000).toInt()))
+    inner class MainViewPagerAdapter(fm: FragmentManager): FragmentPagerAdapter(fm) {
+
+        override fun getItem(position: Int): Fragment {
+            return when (position) {
+                0 -> FeedTabFragment()
+                1 -> NearByTabFragment()
+                2 -> MsgTabFragment()
+                else -> ProfileTabFragment()
             }
         }
-        delete_test.setOnClickListener {
 
-        }
-        query_test.setOnClickListener {
-            TestDao.testIndex()
+        override fun getCount(): Int {
+            return 4
         }
     }
 }

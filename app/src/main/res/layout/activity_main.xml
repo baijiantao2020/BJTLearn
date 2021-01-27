@@ -5,25 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/insert_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="db插入"
-        android:layout_gravity="center_horizontal" />
-
-    <Button
-        android:id="@+id/delete_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="db删除"
-        android:layout_gravity="center_horizontal" />
-
-    <Button
-        android:id="@+id/query_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="db查询测试"
-        android:layout_gravity="center_horizontal" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
