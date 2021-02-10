@@ -34,6 +34,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
     implementation 'com.facebook.fresco:fresco:2.4.0'
     implementation 'com.tencent.wcdb:wcdb-android:1.0.8'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

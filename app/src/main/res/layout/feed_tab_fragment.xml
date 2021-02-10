@@ -4,18 +4,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/test_drawee_view1"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:scaleType="fitXY"
-        android:layout_gravity="center_horizontal"/>
-
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/test_drawee_view2"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"/>
-
 </LinearLayout>
